@@ -1,0 +1,21 @@
+{
+  "searchApiEndpoints": {
+    "ingest": "https://scaus.art/ingest?path={{path}}",
+    "delete": "https://scaus.art/delete?path={{path}}"
+  },
+  "plugins": [
+    {
+      "id": "unpublish",
+      "event": "unpublish"
+    },
+    {
+      "id": "delete",
+      "event": "delete"
+    },
+    {
+      "id": "search-update",
+      "title": "Update Search",
+      "event": "search-update"
+    }
+  ]
+}
