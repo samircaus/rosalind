@@ -23,10 +23,9 @@ function injectScript(src) {
 
 function loadLaunch() {
     window.adobeDataLayer = window.adobeDataLayer || [];
-
     const src = window.location.host === 'www.scaus.art'
-        ? 'https://assets.adobedtm.com/f169d022e5ee/136e9e839aa8/launch-cbee0d70fe5b-development.min.js'
-        : 'https://assets.adobedtm.com/f169d022e5ee/136e9e839aa8/launch-cbee0d70fe5b-development.min.js';
+        ? 'https://assets.adobedtm.com/6a203c8a0ff8/bb846fdd3b08/launch-7668fb698976-development.min.js'
+        : 'https://assets.adobedtm.com/6a203c8a0ff8/bb846fdd3b08/launch-7668fb698976-development.min.js';
     injectScript(src);
 }
 

@@ -4,10 +4,7 @@ compatibility_date = "2023-05-24"
 usage_model = "unbound"
 env = { }
 
-[route]
-pattern = "*.scaus.art/*"
-zone_name = ""
-script = "franklin-worker"
+route = { pattern = "*.scaus.art/*", zone_name = "scaus.art" }
 
 [triggers]
 crons = [ ]
