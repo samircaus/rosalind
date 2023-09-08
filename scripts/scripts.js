@@ -15,6 +15,15 @@ import {
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
+export function addChevronToButtons(element, selector = 'a.button') {
+  /* Add chevron to buttons */
+  element.querySelectorAll(selector).forEach((button) => {
+    const chevron = document.createElement('span');
+    chevron.classList.add('icon', 'icon-chevron-right');
+    button.append(chevron);
+  });
+}
+
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element

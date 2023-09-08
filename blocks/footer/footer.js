@@ -1,4 +1,4 @@
-import { decorateIcons, getLanguagePath } from '../../scripts/lib-franklin.js';
+import { decorateIcons } from '../../scripts/lib-franklin.js';
 import { getNavPath } from '../header/header.js';
 
 /**
@@ -9,7 +9,7 @@ import { getNavPath } from '../header/header.js';
 export default async function decorate(block) {
   block.textContent = '';
 
-  const resp = await fetch(`${getLanguagePath()}${getNavPath('footer')}.plain.html`);
+  const resp = await fetch(`${getNavPath('footer')}.plain.html`);
   const html = await resp.text();
   const footer = document.createElement('div');
   footer.innerHTML = html;
