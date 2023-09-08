@@ -7,8 +7,8 @@ export default async function decorate(block) {
         fetch(link).then(response => {
             return response.text();
         }).then(data => {
-            include.innerHTML = resp.text
-            block.innerHTML = include.outerHTML;
+            // include.innerHTML = data
+            block.innerHTML = data;
         })
     }
 }
