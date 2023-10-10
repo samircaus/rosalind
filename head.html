@@ -1,4 +1,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script>
+    !function(e,a,n,t){var i=e.head;if(i){
+    if (a) return;
+    var o=e.createElement("style");
+    o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
+    (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, "body { opacity: 0 !important }", 3000);
+</script>
+
 <script src="/scripts/lib-franklin.js" type="module"></script>
 <script src="/scripts/scripts.js" type="module"></script>
 <link rel="stylesheet" href="/styles/styles.css"/>
@@ -6,10 +14,3 @@
 <link rel="icon" href="data:,">
 <meta name="urn:adobe:aem:editor:aemconnection" content="aem:https://localhost:4502">
 <meta name="urn:adobe:aem:editor:fcsconnection" content="fcs:https://example.franklin.adobe.com/345fcdd">
-<script>
-    !function(e,a,n,t){var i=e.head;if(i){
-    if (a) return;
-    var o=e.createElement("style");
-    o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
-    (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, "body { opacity: 0 !important }", 3000);
-  </script>
