@@ -388,6 +388,11 @@ header nav .nav-sections ul > li.nav-drop[aria-expanded='true'] > .nav-drop-ul-w
     padding: 0;
   }
 
+  header nav li {
+    margin-right: 40px;
+    display: inline;
+  }
+
   header nav .nav-picture {
     display: initial;
   }

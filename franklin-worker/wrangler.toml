@@ -6,6 +6,11 @@ env = { }
 
 route = { pattern = "*.scaus.art/*", zone_name = "scaus.art" }
 
+services = [
+  { binding = "fpid", service = "authentication" },
+  { binding = "logout", service = "logout" }
+]
+
 [triggers]
 crons = [ ]
 
