@@ -46,6 +46,16 @@ function hasSchema(host) {
         },
         // TOOLS ---------------------------------------------------------------------
         {
+          "id": "asset-library",
+          "title": "My Assets",
+          "environments": [ "edit" ],
+          "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franklin/asset-selector.html",
+          "isPalette": true,
+          "includePaths": [ "**.docx**" ],
+          "passConfig": true,
+          "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
+        },
+        {
           id: 'library',
           condition: () => true,
           button: {
