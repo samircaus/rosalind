@@ -1,49 +1,23 @@
-import { decorateIcons } from '../../scripts/lib-franklin.js';
-import { createIcon } from '../../scripts/scripts.js';
+/*
+ * Accordion Block
+ * Recreate an accordion
+ * https://www.hlx.live/developer/block-collection/accordion
+ */
 
-export default async function decorate(block) {
-  const accordionItems = block.querySelectorAll(':scope > div > div');
-  accordionItems.forEach((accordionItem) => {
-    const nodes = accordionItem.children;
-
-    const titleText = nodes[0];
-    const rest = Array.prototype.slice.call(nodes, 1);
-
-    const titleDiv = document.createElement('div');
-    titleDiv.appendChild(titleText);
-    titleDiv.appendChild(createIcon('accordionarrow'));
-
-    titleDiv.classList.add('accordion-trigger');
-
-    const content = document.createElement('div');
-    content.classList.add('accordion-content');
-    rest.forEach((elem) => {
-      content.appendChild(elem);
-    });
-
-    const newItem = document.createElement('div');
-    newItem.appendChild(titleDiv);
-    newItem.appendChild(content);
-
-    newItem.classList.add('accordion-item');
-    decorateIcons(newItem);
-
-    accordionItem.replaceWith(newItem);
-  });
-
-  const triggers = block.querySelectorAll('.accordion-trigger');
-  triggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const openAttribute = 'aria-expanded';
-      const wasOpen = trigger.parentElement.hasAttribute(openAttribute);
-
-      triggers.forEach((_trigger) => {
-        _trigger.parentElement.removeAttribute('aria-expanded');
-      });
-
-      if (!wasOpen) {
-        trigger.parentElement.setAttribute('aria-expanded', '');
-      }
-    });
+export default function decorate(block) {
+  [...block.children].forEach((row) => {
+    // decorate accordion item label
+    const label = row.children[0];
+    const summary = document.createElement('summary');
+    summary.className = 'accordion-item-label';
+    summary.append(...label.childNodes);
+    // decorate accordion item body
+    const body = row.children[1];
+    body.className = 'accordion-item-body';
+    // decorate accordion item
+    const details = document.createElement('details');
+    details.className = 'accordion-item';
+    details.append(summary, body);
+    row.replaceWith(details);
   });
 }
