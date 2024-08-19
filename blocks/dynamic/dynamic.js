@@ -1,5 +1,4 @@
 export default async function decorate(block) {
-  console.log(block);
   // block.textContent = '';
   const link = block.querySelector('a');
   if (link !== null) {
