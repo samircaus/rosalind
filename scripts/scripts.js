@@ -148,14 +148,11 @@ async function getAndApplyRenderDecisions() {
   });
 }
 
-let alloyLoadedPromise = initWebSDK('./alloy.js', {
-    datastreamId: '96f1c7b0-9607-404a-a6c3-a1e71445a99f',
-    orgId: 'B504732B5D3B2A790A495ECF@AdobeOrg',
-  });;
-if (getMetadata('target')) {
-  alloyLoadedPromise.then(() => getAndApplyRenderDecisions());
-}
-
+const alloyLoadedPromise = initWebSDK('./alloy.js', {
+  datastreamId: '96f1c7b0-9607-404a-a6c3-a1e71445a99f',
+  orgId: 'B504732B5D3B2A790A495ECF@AdobeOrg',
+});
+alloyLoadedPromise.then(() => getAndApplyRenderDecisions());
 
 /**
  * Loads everything needed to get to LCP.
@@ -169,10 +166,10 @@ async function loadEager(doc) {
     decorateMain(main);
     // wait for alloy to finish loading
     await alloyLoadedPromise;
-    // show the LCP block in a dedicated frame to reduce TBT
     await new Promise((res) => {
       window.requestAnimationFrame(async () => {
-        await waitForLCP(LCP_BLOCKS);
+        document.body.classList.add('appear');
+        await loadSection(main.querySelector('.section'), waitForFirstImage);
         res();
       });
     });
