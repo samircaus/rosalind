@@ -1,9 +1,10 @@
-# Your Project's Title...
-Your project's description...
+# Rosalind - AEM EDS Project...
+Sample project using AEM Edge Delivery Services 
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://rosalind--samircaus.aem.page/
+- Live: https://rosalind--samircaus.aem.live/
+- CDN: https://www.scaus.art/
 
 ## Installation
 
