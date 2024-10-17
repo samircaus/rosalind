@@ -2,8 +2,8 @@
 Sample project using AEM Edge Delivery Services 
 
 ## Environments
-- Preview: https://rosalind--samircaus.aem.page/
-- Live: https://rosalind--samircaus.aem.live/
+- Preview: https://main--rosalind--samircaus.aem.page/
+- Live: https://main--rosalind--samircaus.aem.live/
 - CDN: https://www.scaus.art/
 
 ## Installation
